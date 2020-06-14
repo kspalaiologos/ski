@@ -10,4 +10,3 @@ Y*h(Y*O){if(O->a&&O->a->q==2){z=1;R O->b;}if(O->a&&O->G&&O->G->q==1){z=1;R O->a-
 b->b=O->b;z=1;R u;}if(O->q==3){O->a=h(O->a);O->b=h(O->b);}R O;}Y*r(){switch(g()){C'(':{Y*u=A(3
 );T a=r();T b=r();g();R u;}C'I':R A(2);C'S':R A(0);C'K':R A(1);}}void q(Y*t){if(t->q==3){J(40)
 ;q(t->a);q(t->b);J(41);}J(t->q["SKI "]);}main(){Y*O=r();while(z){z=0;O=h(O);}q(O);} /// KPS :)
-
