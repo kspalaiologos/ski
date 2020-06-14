@@ -1,0 +1,4 @@
+#!/usr/bin/perl
+use bignum;my(@a,@c,$d);push(@a,0)for(1..$ARGV[0]);s/(-?[0-9]+)[ \t]+(-?[0-9]+)/push(@{$c[$d++]},($1,$2));/ge while(<STDIN>);
+for($d=0;$d<@c;$d++){$a[$c[$d][0]]++if$c[$d][1]==-1;if($c[$d][1]>=0){$d=$c[$d][1]-1if($a[$c[$d][0]]==0);$a[$c[$d][0]]--if($a[
+$c[$d][0]]>0);}}print((shift@a)."\n")for(1..$ARGV[0]);
