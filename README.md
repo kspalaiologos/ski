@@ -10,7 +10,7 @@ lazyk2binski: a 92-byte, public domain LazyK SKI combinator calculus to binary-t
 
 free2strict: a 525-byte, public domain free-hand combinator calculus to strict calculus transpiler. [Try it online!](https://tio.run/##VVDtasMwDPzvp9AYDKs0awv7Z7wXKIXS9QVc1VnN0qSJnS0fzV69k5NuMAiWdD7dnUPJO9HtJhYLCJXJfVpUZ0gra5Ox8x8OyGRUZ7WHUIAPlaMAB5ebqk0C8@BgvD3@Iz4L8Xi0qcst7KCyoa7yP2ALlzrQyVR/yB6a5LUUob1YRqJDzQ6m/21mzXzWKpcHKNVwmM9IEWxkib0gaPTZZFlB0rvOFqk8ICpWazQfrV6qvS7VDho1EKQSFYlcYh@lSL/bMQajLpWk9csSdyPpPq6uVy7JSjC8jOCD8/5iyErCpyfnTXY5Ge75esOFbVh7MhLYx2gbmaxw3s471ekxVD6pP3Sj5NfJZVa2EcVO6C4mbqe0n4U7QilZhNPyQoO7uPi9x63co7KZtz2JSfWuE9ex30p@BtvFSQ13Qik7nFhCTlfYjxizVxx5GM7GxR9TSn4/A7fbG0j@1vfzDWGNGAsPa/wB "C (gcc) – Try It Online")
 
-bcw2ski: a 90-byte, public domain BCKW-system SKI calculus to classic SK(I) calculus transpiler.
+bcw2ski: a 90-byte, public domain BCKW-system SKI calculus to classic SK(I) calculus transpiler. [Try it online!](https://tio.run/##K0gtyjHVTS4AUv//KyvqlxYX6Sdl5umDBBR0C7iK9Z30NTSCNbyDNTW9NfXTrYEizmARkCBCRlMTSGl4AxkQNeEgNcGaGsEQkf//nRScFcIB "Perl 5 (cperl) – Try It Online")
 
 Useful links:
 * [Szewczyk notation for the Minsky machine](https://esolangs.org/wiki/Szewczyk_notation_for_Minsky_machine)
