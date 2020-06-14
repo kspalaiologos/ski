@@ -4,5 +4,7 @@ ski: a 666-byte, public domain SKI combinator calculus evaluator in C.
 
 iota2ski: a 453 byte, public domain pure-iota to SKI combinator calculus transpiler in C. [Try it online!](https://tio.run/##VVBNa8JAEL3nV2wtyEyoENveli00Hjz0ENdeGkoPsq66EGMS19Zk8benMykKZWF2Pt6893bNZGtM39@v7caVVixFY/2pKaNrYyGqkze7VXPrzMXW/u9kwk9e2lupuTxHvq0sdcTRNyfjxWu4JvH5IW6lK72o5SWVMzWVadxBjSGNvdqviuJg4Og6e9hAiigjrTKVSCKtVS2XwtNW/AEExuA2oMdjzSM1xfDH1apMZkpLrVqZ8Sjh66y6CB6R01Z18ITyYoujFURxx9wYtPoATQC6MpoOSob4asBg1BxQEtYo9ZxgNHjtIEFSoTktcWTMsLYUHUyJ4/vg1iK/eR10FjAS4v1t9MnVV4SSbYQFEK3M2UDO8lQzwWW/ciXw11SDws/OFRZm/NREVuS0IlA@xL4Hx8ch4i8 "C (gcc) – Try It Online")
 
+binski2lazyk: a 63-byte, public domain binary-tree SKI combinator calculus to LazyK SKI combinator calculus transpiler. [Try it online!](https://tio.run/##Jcg7DkBAFAXQtajevYUNmLyoRWkD5MYMhU@EStj6KJzyqExSzgrLMK/gHbcD4YU8jaem4QAZOEeocKNxv/6Vu8Fq660Sw5MzgK5hw5Yf "C (gcc) – Try It Online")
+
 Useful links:
 * [Szewczyk notation for the Minsky machine](https://esolangs.org/wiki/Szewczyk_notation_for_Minsky_machine)
