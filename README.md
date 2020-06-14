@@ -6,5 +6,7 @@ iota2ski: a 453 byte, public domain pure-iota to SKI combinator calculus transpi
 
 binski2lazyk: a 63-byte, public domain binary-tree SKI combinator calculus to LazyK SKI combinator calculus transpiler. [Try it online!](https://tio.run/##Jcg7DkBAFAXQtajevYUNmLyoRWkD5MYMhU@EStj6KJzyqExSzgrLMK/gHbcD4YU8jaem4QAZOEeocKNxv/6Vu8Fq660Sw5MzgK5hw5Yf "C (gcc) – Try It Online")
 
+lazyk2binski: a 92-byte, public domain LazyK SKI combinator calculus to binary-tree SKI combinator calculus transpiler. [Try it online!](https://tio.run/##S9ZNT07@/z83MTNPQ7M6M69EIdk2PbUkOSOxSEPTOjNNI9nWVj1BXbO6oBQiqK6hrmkNUQ6j4FKaQKna1JziVAWYUDJQ4P//hISEYE9PbwA "C (gcc) – Try It Online")
+
 Useful links:
 * [Szewczyk notation for the Minsky machine](https://esolangs.org/wiki/Szewczyk_notation_for_Minsky_machine)
