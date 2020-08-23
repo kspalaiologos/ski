@@ -12,7 +12,7 @@ free2strict: a 525-byte, public domain free-hand combinator calculus to strict c
 
 bcw2ski: a 90-byte, public domain BCKW-system SKI calculus to classic SK(I) calculus transpiler. [Try it online!](https://tio.run/##K0gtyjHVTS4AUv//KyvqlxYX6Sdl5umDBBR0C7iK9Z30NTSCNbyDNTW9NfXTrYEizmARkCBCRlMTSGl4AxkQNeEgNcGaGsEQkf//nRScFcIB "Perl 5 (cperl) – Try It Online")
 
-iota2ski: a 50-byte SKI calculus to Jot transpiler. [Try it online!](https://tio.run/##K0gtyjHVTS4AUv//F@t76mtoBHtremvqW3MV6wfrG4KAgYEBmOutD@aA2TEa@oYQhqa@vvX////yC0oy8/OK/@sWAAA "Perl 5 (cperl) – Try It Online")
+ski2iota: a 50-byte SKI calculus to Jot transpiler. [Try it online!](https://tio.run/##K0gtyjHVTS4AUv//F@t76mtoBHtremvqW3MV6wfrG4KAgYEBmOutD@aA2TEa@oYQhqa@vvX////yC0oy8/OK/@sWAAA "Perl 5 (cperl) – Try It Online")
 
 Useful links:
 * [Szewczyk notation for the Minsky machine](https://esolangs.org/wiki/Szewczyk_notation_for_Minsky_machine)
