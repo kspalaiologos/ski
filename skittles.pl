@@ -8,18 +8,15 @@ my ($loc, $comments) = (0, 0);
 
 # Regexp rules hash
 my %rules = ();
-my %hits = ();
 
 # CLI flags.
 my %flags = ();
 
 # Combinator list.
 my %combinators = ();
-my %combhits = ();
 
 # Procedure list.
 my %procedures = ();
-my %lhits = ();
 
 sub handle {
     my ($s) = @_;
@@ -42,8 +39,6 @@ sub handle {
         $rules{$1} = $text;
         $hits{$1} = 0;
 
-        handle($_);
-
         return;
     }
 
@@ -55,49 +50,34 @@ sub handle {
         }
 
         $combinators{$1} = $2;
-        $combhits{$1} = 0;
-
-        return;
-    }
-
-    # 3. Parse named lambda declarations.
-
-    if($s =~ m/\$(\p{L}+)$/) {
-        my $text = '';
-
-        while(<>) {
-            $loc++;
-            last unless /^[\t ]+/;
-            $text .= s/[\t ]//gr;
-        }
-
-        $procedures{$1} = $text;
-        $lhits{$1} = 0;
-
-        handle($_);
-
         return;
     }
 
     # 4. Parse named inline lambda declarations.
 
-    if($s =~ m/\$(\p{L}+)\:(.*)$/) {
+    if($s =~ m/\$([0-9A-Za-z_]+)\:(.*)$/) {
         $procedures{$1} = $2;
-        $lhits{$1} = 0;
-
         return;
     }
 
-    foreach my $key (keys %rules) {
-        $hits{$key} += $s =~ s/$key/\n\@push #$key\n$rules{$key}\@pop\n/g;
-    }
-    
-    foreach my $key (keys %procedures) {
-        $lhits{$key} += $s =~ s/\b$key\b/\n\@push \$$key\n$procedures{$key}\@pop\n/g;
-    }
+    my $changed = 1;
+    while($changed > 0) {
+        $changed = 0;
+        
+        foreach my $key (keys %procedures) {
+            my $hit = $s =~ s/\b$key\b/$procedures{$key}\n/g;
+            $changed = $hit if($changed == 0);
+        }
 
-    foreach my $key (keys %combinators) {
-        $combhits{$key} += $s =~ s/$key/\n\@push \%$key\n$combinators{$key}\n\@pop\n/g;
+        foreach my $key (keys %combinators) {
+            my $hit = $s =~ s/$key/$combinators{$key}\n/g;
+            $changed = $hit if($changed == 0);
+        }
+
+        foreach my $key (keys %rules) {
+            my $hit = $s =~ s/$key/$rules{$key}\n/g;
+            $changed = $hit if($changed == 0);
+        }
     }
 
     my @backtrace;
@@ -128,17 +108,6 @@ sub handle {
     print $s;
 }
 
-sub listhits {
-    my $c = '';
-    my (%list) = @_;
-
-    foreach my $key (keys %list) {
-        $c .= " * $key: $list{$key}\n"
-    }
-
-    return $c;
-}
-
 if($ARGV[0] =~ /^-/) {
     my $arg = shift @ARGV;
     $arg =~ s/(.)/$flags{'-' . $1} = 1;/ge;
@@ -161,24 +130,4 @@ while(<>) {
     $loc++;
     s/;(.*)$//g and $comments++;
     handle($_);
-}
-
-END {
-    $loc -= $comments;
-
-    print STDERR "\nDone."
-        . "\n * $loc lines of code."
-        . "\n * $comments comments."
-        . "\n * " . (time - $^T) . " second elapsed, "
-                  . int(($loc + $comments) * 100 / (time - $^T + 1)) / 100 . " lines/s"
-        . "\n * " . (scalar keys %rules) . " rules registered."
-        . "\n * " . (scalar keys %combinators) . " combinators registered."
-        . "\n * " . (scalar keys %procedures) . " named expressions registered."
-        . "\n\nMacro Hits:\n"
-        . listhits(%hits)
-        . "\n\nCombinator Hits:\n"
-        . listhits(%combhits)
-        . "\n\nNamed lambda Hits:\n"
-        . listhits(%lhits)
-    if $flags{'-s'};
 }
